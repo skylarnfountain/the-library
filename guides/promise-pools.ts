@@ -16,23 +16,24 @@ const mockData = [
     { recordName: 'Five', body: 'This is my fifth record'},
     { recordName: 'Six', body: 'This is my sixth record'}
 ]
-console.log(`Initial Data: ${mockData}`);
 
+console.log('Starting execution');
 promisePoolExample(mockData);
 
 
 
 async function promisePoolExample(data) {
     /* Documentation: */
-    console.log(`Initial Data: ${data}`)
     const { results, errors } = await PromisePool
         .for(data)
         .withConcurrency(2) // Default is 10
-        .process (async record => {
-            const returnedResults = await processData(record); 
-            console.log(returnedResults);
-            console.log(`Record ${returnedResults.recordName} processed`)
-            return returnedResults;
+        .process (async (record : any) => {
+           await delay(10000);
+           processData(record); // do i need an await here?
+
+            console.log(record);
+            console.log(`Record ${record.recordName} processed`)
+            return record;
         });
     
     console.log(`Results: ${JSON.stringify(results)}`);
@@ -58,6 +59,10 @@ async function promisePoolExample(data) {
 */
 
 async function processData (data) {
-    setTimeout(() => data.body = `This is my new body for Record ${data.recordName}`, 10000); // 10 seconds
+    data.body = `This is my new body for Record ${data.recordName}`; // 10 seconds
     return data;
+}
+
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
