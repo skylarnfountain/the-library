@@ -1,2 +1,2 @@
 # The Library 📖
-Holds miscellaneous documentation and guides over specific coding concepts
+Holds miscellaneous documentation over specific coding concepts
