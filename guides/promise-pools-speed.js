@@ -37,7 +37,7 @@ async function promisePoolExample() {
     /* Documentation: https://superchargejs.com/docs/3.x/promise-pool */
     const { errors } = await PromisePool
         .for(mockData)
-        .withConcurrency(2) // Change concurrency pools here
+        .withConcurrency(2) // Change concurrency here
         .process(async (record) => {
             await delay(10000);
             processData(record);
