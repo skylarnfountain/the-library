@@ -2,14 +2,14 @@ import { PromisePool } from '@supercharge/promise-pool';
 
 /***************************************************************************************************
  * Promise Pool Speed Test Example *
- * This is a playground example to visualize the differences of setting the concurrency value by utlizing setTimeout
+ * This is a playground example to visualize the differences in setting the concurrency value by utilizing setTimeout
  
  * Expected Results based on a timeout of 10000ms and with a total of six records *
-    * withConcurrency(1) takes ~60 seconds for overall execution and requires six pools
-    * withConcurrency(2) takes ~30 seconds for overall execution and requires three pools
-    * withConcurrency(3) takes ~20 seconds for overall execution and requires two pools
-    * withConcurrency(4 or 5) takes ~20 seconds for overall execution and requires two pools
-    * withConcurrency(6 or more) takes ~10 seconds and requires one pool
+    * withConcurrency(1) takes ~60 seconds for overall execution
+    * withConcurrency(2) takes ~30 seconds for overall execution
+    * withConcurrency(3) takes ~20 seconds for overall execution
+    * withConcurrency(4 or 5) takes ~20 seconds for overall execution
+    * withConcurrency(6 or more) takes ~10 seconds
     
  * See below for code *
 ***************************************************************************************************/
