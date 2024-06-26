@@ -9,7 +9,7 @@ import { PromisePool } from '@supercharge/promise-pool';
     * withConcurrency(2) takes ~30 seconds for overall execution
     * withConcurrency(3) takes ~20 seconds for overall execution
     * withConcurrency(4 or 5) takes ~20 seconds for overall execution
-    * withConcurrency(6 or more) takes ~10 seconds
+    * withConcurrency(6 or more) takes ~10 seconds for overall execution
     
  * See below for code *
 ***************************************************************************************************/
