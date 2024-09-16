@@ -2,9 +2,9 @@ import { PromisePool } from '@supercharge/promise-pool';
 
 /***************************************************************************************************
  * Promise Pool Speed Test Example *
- * This is a playground example to visualize the differences in setting the concurrency value by utilizing setTimeout
- 
- * Expected Results based on a timeout of 10000ms and with a total of six records *
+ * This is a playground example utilizing setTimeout to visualize the differences in setting the concurrency value
+
+ * Expected Results based on a timeout of 10000ms and with a total of six records:
     * withConcurrency(1) takes ~60 seconds for overall execution
     * withConcurrency(2) takes ~30 seconds for overall execution
     * withConcurrency(3) takes ~20 seconds for overall execution
@@ -45,7 +45,7 @@ async function promisePoolExample() {
             return record;
         });
 
-    /* For more documentation for managing errors, such as custom error handling: https://superchargejs.com/docs/3.x/promise-pool#error-handling */
+    /* Documentation for managing errors, such as custom error handling: https://superchargejs.com/docs/3.x/promise-pool#error-handling */
     errors.forEach(error => {
         console.error(`Record ${error.item.recordName} failed: ` + error)
     })
