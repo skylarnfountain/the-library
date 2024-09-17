@@ -4,7 +4,7 @@ import { PromisePool } from '@supercharge/promise-pool';
  * Promise Pool Speed Test Example *
  * This is a playground example utilizing setTimeout to visualize the differences in setting the concurrency value
 
- * Expected Results based on a timeout of 10000ms and with a total of six records:
+ * Expected Results based on a timeout of 10000ms (10 seconds) and with a total of six records:
     * withConcurrency(1) takes ~60 seconds for overall execution
     * withConcurrency(2) takes ~30 seconds for overall execution
     * withConcurrency(3) takes ~20 seconds for overall execution
@@ -39,7 +39,7 @@ async function promisePoolExample() {
         .for(mockData)
         .withConcurrency(2) // Change concurrency here
         .process(async (record) => {
-            await delay(10000);
+            await delay(10000); // This is the test case using a 10000ms (10 second) delay
             processData(record);
             console.log(`Record ${record.recordName} processed`);
             return record;
